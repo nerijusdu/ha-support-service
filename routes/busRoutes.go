@@ -1,9 +1,9 @@
 package routes
 
 import (
-	"encoding/json"
 	"fmt"
 	"haservice/services/trafi"
+	"haservice/utils"
 	"net/http"
 )
 
@@ -28,6 +28,5 @@ func getNextBus(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(&NextBusResponse{Data: schedule.Realtime})
+	utils.WriteJson(w, &NextBusResponse{Data: schedule.Realtime})
 }

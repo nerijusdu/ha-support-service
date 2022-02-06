@@ -1,27 +1,15 @@
 package trafi
 
 import (
-	"encoding/json"
-	"io/ioutil"
-	"net/http"
+	"haservice/utils"
 )
 
-func GetRealtimeSchedule(scheduleId string, stopId string, trackId string) (*Schedule, error) {
-	resp, err := http.Get("https://web.trafi.com/api/times/vilnius/realtime?scheduleId=" + scheduleId + "&trackId=" + trackId + "&stopId=" + stopId)
-	if err != nil {
-		return nil, err
-	}
+func GetRealtimeSchedule(scheduleId string, stopId string, trackId string) (*RealtimeSchedule, error) {
+	schedule := &RealtimeSchedule{}
+	err := utils.GetJson(
+		"https://web.trafi.com/api/times/vilnius/realtime?scheduleId="+scheduleId+"&trackId="+trackId+"&stopId="+stopId,
+		schedule,
+	)
 
-	body, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		return nil, err
-	}
-
-	schedule := &Schedule{}
-	err = json.Unmarshal(body, schedule)
-	if err != nil {
-		return nil, err
-	}
-
-	return schedule, nil
+	return schedule, err
 }

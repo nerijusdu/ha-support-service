@@ -7,7 +7,7 @@ type RealtimeData struct {
 	Tags             []string `json:"tags"`
 }
 
-type Schedule struct {
+type RealtimeSchedule struct {
 	TrackName string         `json:"trackName"`
 	TrackId   string         `json:"TrackId"`
 	StopName  string         `json:"stopName"`

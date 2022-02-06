@@ -1,10 +1,10 @@
 package routes
 
 import (
-	"encoding/json"
 	"fmt"
 	"haservice/config"
 	"haservice/services/channels"
+	"haservice/utils"
 	"net/http"
 
 	"github.com/gorilla/mux"
@@ -21,7 +21,7 @@ func getChannel(w http.ResponseWriter, r *http.Request) {
 			streamUrl, err := channels.GetStreamUrl(&chn)
 			if err != nil {
 				fmt.Println(err)
-				w.WriteHeader(http.StatusBadRequest)
+				w.WriteHeader(http.StatusInternalServerError)
 				return
 			}
 
@@ -34,10 +34,9 @@ func getChannel(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	w.Header().Set("Content-Type", "application/json")
 	if (channel == channels.Channel{}) {
 		w.WriteHeader(http.StatusNotFound)
 	} else {
-		json.NewEncoder(w).Encode(channel)
+		utils.WriteJson(w, channel)
 	}
 }
