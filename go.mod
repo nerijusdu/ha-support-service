@@ -1,4 +1,4 @@
-module hatvservice
+module haservice
 
 go 1.17
 
