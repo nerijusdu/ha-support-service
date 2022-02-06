@@ -1,0 +1,10 @@
+port: 3000
+channels:
+  - id: lrt
+    url: https://www.lrt.lt/servisai/stream_url/live/get_live_url.php?channel=LTV1
+    streamUrlPath: response.data.content
+    contentType: application/vnd.apple.mpegurl
+  - id: lnk
+    url: https://lnk.lt/api/video/video-config/137535
+    streamUrlPath: videoInfo.videoUrl
+    contentType: application/vnd.apple.mpegurl
