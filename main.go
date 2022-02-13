@@ -16,8 +16,8 @@ func main() {
 	godotenv.Load()
 	config := config.GetConfig()
 	r := mux.NewRouter()
-	r.PathPrefix("/").Handler(http.FileServer(http.Dir("./public")))
 	routes.RegisterRoutes(r)
+	r.PathPrefix("/").Handler(http.FileServer(http.Dir("./public")))
 
 	serverUrl := os.Getenv("SERVER_URL")
 	url := fmt.Sprintf("%s:%d", serverUrl, config.Port)
