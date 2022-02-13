@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+.program-list {
+  margin-bottom: 2rem;
+  font-family: Roboto;
+}
+
+.program-item {
+  border: 1px solid #ebebeb;
+  border-top: none;
+  padding: 0.75rem;
+  position: relative;
+  min-height: 8rem;
+  display: flex;
+}
+
+.program-item-image {
+  margin-right: 1rem;
+}
+
+.program-item-image img {
+  border-radius: 0.3rem;
+  max-width: 11rem;
+  height: auto;
+  display: block;
+}
+
+.program-details {
+  display: flex;
+}
+
+.program-details .time {
+  color: #ec1c24;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding-right: 1rem;
+}
+
+.program-details .now {
+  background-color: #ec1c24;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0.3rem;
+  border-radius: 0.3rem;
+  text-transform: uppercase;
+}
+
+.program-details .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.6rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.program-details p {
+  color: #65676b;
+  font-size: 0.875rem;
+  margin-bottom: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}

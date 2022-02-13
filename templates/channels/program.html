@@ -6,16 +6,43 @@
 </head>
 
 <body>
-  <div>
-    {{ .Content }}
-  </div>
-
-  <script>
-    const element = document.querySelector('{{ .ScrollTo }}')
-    if (element) {
-      element.scrollIntoView();
-    }
-  </script>
+  {{ if .Data }}
+  <div class="program-list">
+    {{ range .Data }}
+    <div class="program-item">
+      <div class="program-item-image">
+        <img class="img-fluid" src="{{ .PosterImage }}">
+      </div>
+      {{ if .Progress }}
+      <div class="program-details is-playing">
+        {{ else }}
+        <div class="program-details">
+          {{ end }}
+          <div class="time">
+            {{ .StartTime }}
+            {{ if .Progress }}
+            <span class="now">Dabar</span>
+            {{ end }}
+          </div>
+          <div>
+            <span class="title">{{ .Title }}</span>
+            <p>{{ .Description }}</p>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    {{ else }}
+    <div>
+      {{ .Content }}
+    </div>
+    {{ end }}
+    <script>
+      const element = document.querySelector('{{ .ScrollTo }}' || 'body');
+      if (element) {
+        element.scrollIntoView();
+      }
+    </script>
 </body>
 
 </html>

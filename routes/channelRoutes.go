@@ -6,8 +6,6 @@ import (
 	"haservice/services/channels"
 	"haservice/utils"
 	"net/http"
-	"os"
-	"text/template"
 
 	"github.com/gorilla/mux"
 )
@@ -58,28 +56,5 @@ func getChannelProgram(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	program, err := channels.GetProgram(channelConfig)
-	if err != nil {
-		fmt.Println(err)
-		w.WriteHeader(http.StatusInternalServerError)
-		return
-	}
-
-	hostUrl := os.Getenv("HOST_URL")
-	tmpl := template.Must(template.ParseFiles("templates/channels/program.html"))
-	tmpl.Execute(w, ProgramTemplateData{
-		Host:       hostUrl,
-		Id:         channelConfig.Id,
-		Content:    *program,
-		Stylesheet: channelConfig.ProgramStylesheet,
-		ScrollTo:   channelConfig.ProgramScrollTo,
-	})
-}
-
-type ProgramTemplateData struct {
-	Host       string
-	Id         string
-	Content    string
-	Stylesheet string
-	ScrollTo   string
+	channels.GetProgram(w, channelConfig)
 }
