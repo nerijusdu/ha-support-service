@@ -10,4 +10,4 @@ RUN go build -v -o /ha-support-service
 
 EXPOSE 3000
 
-CMD ["/app/docker-startup.sh"]
+ENTRYPOINT ["sh", "/app/docker-startup.sh"]
