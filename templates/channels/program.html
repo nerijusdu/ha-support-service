@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="{{ .Stylesheet }}" />
+</head>
+
+<body>
+  <div>
+    {{ .Content }}
+  </div>
+
+  <script>
+    const element = document.querySelector('{{ .ScrollTo }}')
+    if (element) {
+      element.scrollIntoView();
+    }
+  </script>
+</body>
+
+</html>

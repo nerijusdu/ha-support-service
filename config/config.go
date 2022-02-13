@@ -7,10 +7,14 @@ import (
 )
 
 type ConfigChannel struct {
-	Id            string `yaml:"id"`
-	Url           string `yaml:"url"`
-	StreamUrlPath string `yaml:"streamUrlPath"`
-	ContentType   string `yaml:"contentType"`
+	Id                string `yaml:"id"`
+	Url               string `yaml:"url"`
+	StreamUrlPath     string `yaml:"streamUrlPath"`
+	ContentType       string `yaml:"contentType"`
+	ProgramUrl        string `yaml:"programUrl"`
+	ProgramSelector   string `yaml:"programSelector"`
+	ProgramStylesheet string `yaml:"programStylesheet"`
+	ProgramScrollTo   string `yaml:"programScrollTo"`
 }
 
 type Config struct {

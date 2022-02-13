@@ -9,6 +9,7 @@ import (
 
 func RegisterRoutes(router *mux.Router) {
 	router.HandleFunc("/api/health", getHealth)
+	router.HandleFunc("/api/channel/{channelId}/program", getChannelProgram)
 	router.HandleFunc("/api/channel/{channelId}", getChannel)
 	router.HandleFunc("/api/bus/realtime", getNextBus)
 }
