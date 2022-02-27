@@ -8,6 +8,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"os"
+	"strings"
 	"time"
 
 	"github.com/PuerkitoBio/goquery"
@@ -76,7 +77,10 @@ func getProgramWithSelector(channelConfig *config.ConfigChannel) (*string, error
 		return nil, err
 	}
 
-	programHtml, err := goquery.OuterHtml(doc.Find(channelConfig.ProgramSelector).First())
+	selector := channelConfig.ProgramSelector
+	selector = strings.Replace(selector, "$date$", time.Now().Format("2006.01.02"), -1)
+
+	programHtml, err := goquery.OuterHtml(doc.Find(selector).First())
 	return &programHtml, err
 }
 

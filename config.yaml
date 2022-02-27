@@ -5,7 +5,7 @@ channels:
     streamUrlPath: response.data.content
     contentType: application/vnd.apple.mpegurl
     programUrl: https://www.lrt.lt/programa
-    programSelector: 'div[data-slider-id="2022.02.13"]'
+    programSelector: 'div[data-slider-id="$date$"]'
     programStylesheet: https://www.lrt.lt/css/app.css
     programScrollTo: .is-playing
   - id: lnk
