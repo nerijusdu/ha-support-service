@@ -14,3 +14,27 @@ channels:
     contentType: application/vnd.apple.mpegurl
     programUrl: https://lnk.lt/api/main/content-page-by-program/tv-programa
     programScrollTo: .is-playing
+  - id: btv
+    url: https://lnk.lt/api/video/video-config/137534
+    streamUrlPath: videoInfo.videoUrl
+    contentType: application/vnd.apple.mpegurl
+    programUrl: https://lnk.lt/api/main/content-page-by-program/tv-programa
+    programScrollTo: .is-playing
+  - id: 2tv
+    url: https://lnk.lt/api/video/video-config/95343
+    streamUrlPath: videoInfo.videoUrl
+    contentType: application/vnd.apple.mpegurl
+    programUrl: https://lnk.lt/api/main/content-page-by-program/tv-programa
+    programScrollTo: .is-playing
+  - id: infotv 
+    url: https://lnk.lt/api/video/video-config/137748
+    streamUrlPath: videoInfo.videoUrl
+    contentType: application/vnd.apple.mpegurl
+    programUrl: https://lnk.lt/api/main/content-page-by-program/tv-programa
+    programScrollTo: .is-playing
+  - id: tv1
+    url: https://lnk.lt/api/video/video-config/106791
+    streamUrlPath: videoInfo.videoUrl
+    contentType: application/vnd.apple.mpegurl
+    programUrl: https://lnk.lt/api/main/content-page-by-program/tv-programa
+    programScrollTo: .is-playing
