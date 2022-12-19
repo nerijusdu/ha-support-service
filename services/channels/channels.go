@@ -38,7 +38,7 @@ func GetProgram(w http.ResponseWriter, channelConfig *config.ConfigChannel) {
 	var data []ProgramItem
 	var err error
 
-	if channelConfig.Id == "lnk" {
+	if channelConfig.ProgramSelector == "" {
 		data, err = getProgramFromJson(channelConfig)
 	} else {
 		var program *string
@@ -85,21 +85,13 @@ func getProgramWithSelector(channelConfig *config.ConfigChannel) (*string, error
 }
 
 func getProgramFromJson(channelConfig *config.ConfigChannel) ([]ProgramItem, error) {
-	program := &LnkProgram{}
 	results := []ProgramItem{}
 	err := utils.GetJson(
-		channelConfig.ProgramUrl,
-		program,
+		fmt.Sprintf(channelConfig.ProgramUrl, time.Now().Format("2006-01-02T15:04:05.000Z")),
+		&results,
 	)
 	if err != nil {
 		return nil, err
-	}
-
-	for _, comp := range program.Components {
-		if comp.Type == 19 {
-			results = comp.Component.Schedule
-			break
-		}
 	}
 
 	for i := 0; i < len(results); i++ {

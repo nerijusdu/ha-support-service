@@ -2,7 +2,9 @@
 <html>
 
 <head>
-  <link type="text/css" rel="stylesheet" href="{{ .Host }}/styles/{{ .Id }}.css" />
+  {{ if .Stylesheet }}
+    <link type="text/css" rel="stylesheet" href="{{ .Stylesheet }}" />
+  {{ end }}
 </head>
 
 <body>
