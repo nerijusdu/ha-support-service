@@ -5,6 +5,9 @@
   {{ if .Stylesheet }}
     <link type="text/css" rel="stylesheet" href="{{ .Stylesheet }}" />
   {{ end }}
+  {{ if .LocalStylesheet }}
+    <link type="text/css" rel="stylesheet" href="{{ .Host }}/styles/{{ .LocalStylesheet }}" />
+  {{ end }}
 </head>
 
 <body>

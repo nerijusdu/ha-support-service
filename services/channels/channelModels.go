@@ -9,12 +9,13 @@ type Channel struct {
 }
 
 type ProgramTemplateData struct {
-	Host       string
-	Id         string
-	Content    template.HTML
-	Data       []ProgramItem
-	Stylesheet string
-	ScrollTo   string
+	Host            string
+	Id              string
+	Content         template.HTML
+	Data            []ProgramItem
+	Stylesheet      string
+	LocalStylesheet string
+	ScrollTo        string
 }
 
 type LnkProgram struct {

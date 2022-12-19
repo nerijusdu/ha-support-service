@@ -14,32 +14,32 @@ channels:
     contentType: application/vnd.apple.mpegurl
     programUrl: https://lnk.lt/api/main/schedule/2/%s
     programScrollTo: .is-playing
-    programStylesheet: /styles/lnk.css
+    programLocalStylesheet: lnk.css
   - id: btv
     url: https://lnk.lt/api/video/video-config/137534
     streamUrlPath: videoInfo.videoUrl
     contentType: application/vnd.apple.mpegurl
     programUrl: https://lnk.lt/api/main/schedule/3/%s
     programScrollTo: .is-playing
-    programStylesheet: /styles/lnk.css
+    programLocalStylesheet: lnk.css
   - id: 2tv
     url: https://lnk.lt/api/video/video-config/95343
     streamUrlPath: videoInfo.videoUrl
     contentType: application/vnd.apple.mpegurl
     programUrl: https://lnk.lt/api/main/schedule/6/%s
     programScrollTo: .is-playing
-    programStylesheet: /styles/lnk.css
+    programLocalStylesheet: lnk.css
   - id: infotv 
     url: https://lnk.lt/api/video/video-config/137748
     streamUrlPath: videoInfo.videoUrl
     contentType: application/vnd.apple.mpegurl
     programUrl: https://lnk.lt/api/main/schedule/5/%s
     programScrollTo: .is-playing
-    programStylesheet: /styles/lnk.css
+    programLocalStylesheet: lnk.css
   - id: tv1
     url: https://lnk.lt/api/video/video-config/106791
     streamUrlPath: videoInfo.videoUrl
     contentType: application/vnd.apple.mpegurl
     programUrl: https://lnk.lt/api/main/schedule/4/%s
     programScrollTo: .is-playing
-    programStylesheet: /styles/lnk.css
+    programLocalStylesheet: lnk.css

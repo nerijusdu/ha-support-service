@@ -55,12 +55,13 @@ func GetProgram(w http.ResponseWriter, channelConfig *config.ConfigChannel) {
 	hostUrl := os.Getenv("HOST_URL")
 	tmpl := template.Must(template.ParseFiles("templates/channels/program.html"))
 	tmpl.Execute(w, ProgramTemplateData{
-		Host:       hostUrl,
-		Id:         channelConfig.Id,
-		Content:    content,
-		Data:       data,
-		Stylesheet: channelConfig.ProgramStylesheet,
-		ScrollTo:   channelConfig.ProgramScrollTo,
+		Host:            hostUrl,
+		Id:              channelConfig.Id,
+		Content:         content,
+		Data:            data,
+		Stylesheet:      channelConfig.ProgramStylesheet,
+		LocalStylesheet: channelConfig.ProgramLocalStylesheet,
+		ScrollTo:        channelConfig.ProgramScrollTo,
 	})
 }
 
