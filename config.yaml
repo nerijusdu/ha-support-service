@@ -8,6 +8,14 @@ channels:
     programSelector: 'div[data-slider-id="$date$"]'
     programStylesheet: https://www.lrt.lt/css/app.css
     programScrollTo: .is-playing
+  - id: lrtplus
+    url: https://www.lrt.lt/servisai/stream_url/live/get_live_url.php?channel=LTV2
+    streamUrlPath: response.data.content
+    contentType: application/vnd.apple.mpegurl
+    programUrl: https://www.lrt.lt/programa
+    programSelector: 'div[data-slider-id="$date$"]'
+    programStylesheet: https://www.lrt.lt/css/app.css
+    programScrollTo: .is-playing
   - id: lnk
     url: https://lnk.lt/api/video/video-config/137535
     streamUrlPath: videoInfo.videoUrl
